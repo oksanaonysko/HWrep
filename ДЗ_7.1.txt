@@ -1,0 +1,21 @@
+let myObject = {
+    firstProperty: "якась перша властивість",
+    secondProperty: "якась друга властивість",
+    thirdProperty: "якась третя властивість",
+
+        getInfo: function() {
+            for (let key in this){
+                if (this.hasOwnProperty(key) && typeof this[key] !== 'function'){
+                    console.log (`${key}: ${this[key]}`);
+                }
+            }
+        
+    }
+}
+
+myObject.getInfo();
+
+myObject.newProperty = "якась нова властивість";
+
+console.log ("\n")
+myObject.getInfo();
