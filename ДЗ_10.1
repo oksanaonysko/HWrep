@@ -1,0 +1,33 @@
+var arr = [
+    {
+        userName:"Test",
+        lastName:"Test",
+        email:"test.test@gmail.com"
+    },
+    {
+        userName:"Dmitro",
+        lastName:"Porohov",
+        email:"dmitro.porohov@yahoo.com"
+    },
+    {
+        userName:"Andrii",
+        lastName:"",
+        email:"andrii@mail.ru" // Нам такі не підходять
+    },
+];
+
+var regexp = /^[a-z0-9.]+\@(gmail\.com|yahoo\.com)$/i;
+
+var trustedEmails = [];
+
+arr.forEach(function(obj) {
+    if (regexp.test(obj.email)) {
+        trustedEmails.push({
+            userName: obj.userName,
+            lastName: obj.lastName,
+            email: obj.email
+        });
+    }
+});
+
+console.log(trustedEmails);
